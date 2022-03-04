@@ -1,0 +1,19 @@
+{
+    "welcome": [
+        "Hello /username!",
+        "Hey!! What a joy to see you here!",
+        "Hello! If you want to to discover new series/films you are in the correct place!",
+        "Hi /username! How can I help you?"
+    ],
+    "goodbye": [
+        "Bye! I hope to see you soon",
+        "Goodbye /username, I hope I've been helpful!",
+        "See you next time! Come back wen you want to discover a new tv show or movie!"
+    ],
+    "help":[
+        "This chatbot can help you find a new tv show or movie to watch, tell us a couple metrics and we will show it to you!"
+    ],
+    "none": [
+        "No ho he entes"
+    ]
+}

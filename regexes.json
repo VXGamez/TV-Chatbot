@@ -1,0 +1,16 @@
+{
+    "welcome": [
+        "my name is \\w*",
+        "hello",
+        "hi"
+    ],
+    "goodbye": [
+        "goodbye",
+        "bye",
+        "see you"
+    ],
+    "help": [
+        "\\w*help\\w*",
+        "\\w*how\\w*"
+    ]
+}
