@@ -30,6 +30,14 @@
         "show",
         "series"
     ],
+    "streaming_service": [
+        "netflix",
+        "hbo_max",
+        "hbo",
+        "disney_plus",
+        "apple_tv_plus",
+        "prime_video"
+    ],
     "genre": [
         "animation",
         "anime",

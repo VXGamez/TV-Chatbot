@@ -30,6 +30,30 @@ bot.on('message', (msg) => {
     }    
     
     var input = msg.text.toLowerCase();
+
+
+    if(input.match("disney+") != null){
+        input = input.replace("disney+", "disney_plus");
+    }
+    if(input.match("disney plus") != null){
+        input = input.replace("disney plus", "disney_plus");
+    }
+    if(input.match("apple tv +") != null){
+        input = input.replace("apple tv +", "apple_tv_plus");
+    }
+    if(input.match("apple tv plus") != null){
+        input = input.replace("apple tv plus", "apple_tv_plus");
+    }
+    if(input.match("prime video") != null){
+        input = input.replace("prime video", "prime_video");
+    }
+    if(input.match("prime ") != null){
+        input = input.replace("prime ", "prime_video");
+    }
+    if(input.match("hbo max") != null){
+        input = input.replace("hbo max", "hbo_max");
+    }
+
     
     var match = "none";
     
@@ -55,7 +79,6 @@ bot.on('message', (msg) => {
     var sources = "netflix,hbo_max,disney_plus,apple_tv_plus,prime_video";
 
     
-    console.log(match);
     if(match == "welcome"){
         var matches = input.match(regexes.welcome[0]);
         if(matches != null){
@@ -70,7 +93,7 @@ bot.on('message', (msg) => {
     }else if(match == "goodbye"){
         ok=false;
     }
-    else if(match == "recommender" || match == "content_type" || match == "genre"){
+    else if(match == "recommender" || match == "content_type" || match == "genre" || match == "streaming_service"){
         if(input.split(" ").length > 1){
             match = "not found";
             var index = 0;
@@ -102,21 +125,97 @@ bot.on('message', (msg) => {
             var nombres=[];
             var genre=[];
             regexes.genre.forEach(item => {
-                if(input.match(item) != null){
-                    nombres.push(item);
+                if(input.match("not " + item + "|isn't "+item+ "|isn't a "+item+ "|not a "+item) != null){
+                    if(!nombres.includes("not " + item)){
+                        nombres.push("not " + item);
+                    }
+                }else{
+                    if(input.match(item) != null){
+                        if(!nombres.includes(item)){
+                            nombres.push(item);
+                        }
+                    }
                 }
             });
+            console.log(nombres);
             if(nombres.length>0){
                 for(var g in nombres){
-                    genre.push(genresNames[nombres[g]]);
+                    if(nombres[g].split(" ").length>1){
+                        var num = genresNames[nombres[g].split(" ")[1]];
+                        var generated = Object.keys(genresNames)[Math.floor(Math.random()*Object.keys(genresNames).length)];
+                        while(num == genresNames[generated]){
+                            generated = Object.keys(genresNames)[Math.floor(Math.random()*Object.keys(genresNames).length)];
+                        }
+                        genre.push(genresNames[generated]);
+                    }else{
+                        genre.push(genresNames[nombres[g]]);
+                    }
                 }
             }
+            console.log(genre);
+            var selectedGenre = genre[0];
+            
             if(genre.length>1){
-                bot.sendMessage(userId, diccionari['debug'], {parse_mode:'HTML'});
-            }else{
-                user.contentType = content_type;
-                user.lastQuery = "https://api.reelgood.com/v3.0/content/random?content_kind="+user.contentType+"&nocache=true&region=es" + (genre=="" ? "" : "&genre="+genre.toString()) + "&sources=" + sources;
+                var allWords = input.split(" ");
+                
+                var genreOk = true;
+               
+                for(var i=0; i<allWords.length-2 ;i+=2){
+                    if(nombres.includes(allWords[i]) && allWords[i+1] == "and" && nombres.includes(allWords[i+2])){
+                        genreOk =false;
+                        break;
+                    }
+                }
+                if(!genreOk){
+                    bot.sendMessage(userId, diccionari['invalidGenre'][Math.floor(Math.random()*diccionari['moreInfo'].length)], {parse_mode:'HTML'});
+                    return;
+                }else{
+                    selectedGenre = genre[Math.floor(Math.random()*genre.length)];
+                }
             }
+
+            var streaming=[];
+            var platforms="";
+            regexes.streaming_service.forEach(item => {
+                if(input.match(item) != null){
+                    streaming.push(item);
+                }
+            });
+            
+            platforms = "";
+            
+            if(streaming.length > 1){
+                console.log("entra?");
+                var allWords = input.split("or");
+
+                for(var i=0; i<allWords.length ;i++){
+                    var cleaned = "";
+                    var palabros = allWords[i].split(" ");
+                    for(var j=0; j<palabros.length ;j++){
+                        if(palabros[j]== "and"){
+                            cleaned+=" " + palabros[j] + " ";
+                        }
+                        if(palabros[j].match("netflix|hbo_max|hbo|disney_plus|apple_tv_plus|prime_video")!=null){
+                            cleaned+=palabros[j];
+                        }
+                    }
+                    if(cleaned != ""){
+                        allWords[i] = cleaned;
+                    }else{
+                        delete allWords[i];
+                    }
+                }
+
+                
+                platforms = allWords[Math.floor(Math.random()*allWords.length)];
+                
+                platforms = platforms.replace(" and ", ",");
+            }else if(streaming.length==1){
+                platforms = streaming[0];
+            }
+
+            user.contentType = content_type;
+            user.lastQuery = "https://api.reelgood.com/v3.0/content/random?content_kind="+user.contentType+"&nocache=true&region=es" + (genre=="" ? "" : "&genre="+selectedGenre) + "&sources=" + (platforms=="" ?  sources : platforms);
         }else{
             item = diccionari['moreInfo'][Math.floor(Math.random()*diccionari['moreInfo'].length)];
             ok = false;
@@ -146,57 +245,41 @@ bot.on('message', (msg) => {
                     }
                     if(resposta.id != null){
                         
-                        bot.sendPhoto(userId, "https://img.reelgood.com/content/"+user.contentType+"/"+resposta.id+"/poster-780.jpg", 
+                        var contenido = user.contentType;
+                        if(user.contentType == "both"){
+                            if(resposta.season_count == 0){
+                                contenido="movie";
+                            }else{
+                                contenido="show";
+                            }
+                        }
+
+                        bot.sendPhoto(userId, "https://img.reelgood.com/content/"+contenido+"/"+resposta.id+"/poster-780.jpg", 
                             {parse_mode:'HTML', caption: "‎\n☉ <u><b>"+lines+resposta.overview+"❞\n\n✳️ "+ 
                             (resposta.classification == null ? "Unknown": resposta.classification) + "  •  🕑 " + 
                             resposta.runtime+"min" + "  •  ⭐ " + resposta.imdb_rating + "/10"});   
                     }else{
-                        //bot.sendMessage(userId, diccionari['error'][Math.floor(Math.random()*diccionari['error'].length)], {parse_mode:'HTML'});
-                        bot.sendMessage(userId, diccionari['debug'], {parse_mode:'HTML'});
+                        bot.sendMessage(userId, diccionari['error'][Math.floor(Math.random()*diccionari['error'].length)], {parse_mode:'HTML'});
                     }
                     
                         
                 }catch(err) {
-                  //bot.sendMessage(userId, diccionari['error'][Math.floor(Math.random()*diccionari['error'].length)], {parse_mode:'HTML'});
-                  bot.sendMessage(userId, diccionari['debug1'], {parse_mode:'HTML'});
+                  bot.sendMessage(userId, diccionari['error'][Math.floor(Math.random()*diccionari['error'].length)], {parse_mode:'HTML'});
                 }
             });
           } catch(err) {
-            //bot.sendMessage(userId, diccionari['error'][Math.floor(Math.random()*diccionari['error'].length)], {parse_mode:'HTML'});
-            bot.sendMessage(userId, diccionari['debug2'], {parse_mode:'HTML'});
+            bot.sendMessage(userId, diccionari['error'][Math.floor(Math.random()*diccionari['error'].length)], {parse_mode:'HTML'});
           }
         
     } else{
         bot.sendMessage(userId, item, {parse_mode:'HTML'});
     }
-
-    /*
-    "released_on": "2021-06-25T00:00:00",
-    "genres": [
-    12,
-    11
-  ],
-  "season_count": 0,
-
-    
-    
-    */
-    
-
 });
 
 
 
 
 /*
-
-Peli o serie o els dos
-
-Genere/Generes?
-
-Streaming service
-
-
 EXEMPLE DE CONVERSA:
 
 U: Hola!
@@ -211,13 +294,8 @@ C: Qualsevol serie
 U: another one
 C: otra peli (amb les mateixes dades que la anterior)
 
--------------- TAMO AQUI --------------
-
 U: Recomana'm una peli de terror
 C: Qualsevol peli de terror
-
-U: Recomana'm una peli de terror i comedia
-C: Qualsevol peli de terror i comedia
 
 U: Recomana'm una peli de terror o comedia
 C: Qualsevol peli de terror o comedia
@@ -228,15 +306,11 @@ C: Qualsevol peli de peli de netflix
 U: Recomana'm una peli de netflix o hbo
 C: Qualsevol peli de terror o comedia
 
-U: Recomana'm una peli de netflix i hbo !!
-C: Qualsevol peli de terror o comedia
+U: Recomana'm una peli que no sigui de terror
+C: Qualsevol peli que no sigui terror
 
-
-
+-------------- TAMO AQUI --------------
 
 U: Y una de comedia?
 C: Una peli de comedia
-
-U: Recomana'm una peli que no sigui de terror
-C: Qualsevol peli que no sigui terror
 */

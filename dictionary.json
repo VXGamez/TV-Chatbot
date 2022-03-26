@@ -25,6 +25,9 @@
     "genre": [
         "ih"
     ],
+    "streaming_service": [
+        "ih"
+    ],
     "moreInfo": [
         "I need more details!",
         "It's not enough information"
@@ -34,13 +37,14 @@
         "My backend is having some issues",
         "Something didn't work as it should"
     ],
+    "invalidGenre": [
+        "You can only use one genre",
+        "Remember to only use one genre"
+    ],
     "none": [
         "I didn't quite get that",
         "Can you rephrase that?",
         "I'm not sure what you mean by that",
         "Not sure i get what you mean"
-    ],
-    "debug": "Debugging",
-    "debug1": "Debugging1",
-    "debug2": "Debugging2"
+    ]
 }
