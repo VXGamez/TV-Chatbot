@@ -1,6 +1,7 @@
 {
     "welcome": [
         "my name is \\w*",
+        "i'm \\w*",
         "hello",
         "hi"
     ],
@@ -9,8 +10,56 @@
         "bye",
         "see you"
     ],
+    "recommender": [
+        "recommend",
+        "give",
+        "suggest",
+        "tell"
+    ],
+    "another": [
+        "another",
+        "other",
+        "more", 
+        "again"
+    ],
+    "content_type": [
+        "movie",
+        "film",
+        "tv[-| |]show",
+        "tv[-| |]series",
+        "show",
+        "series"
+    ],
+    "genre": [
+        "animation",
+        "anime",
+        "biography",
+        "children",
+        "comedy",
+        "crime",
+        "cult",
+        "documentary",
+        "drama",
+        "family",
+        "fantasy",
+        "food",
+        "game Show",
+        "history",
+        "home & Garden",
+        "horror",
+        "independent",
+        "musical",
+        "mistery",
+        "reality",
+        "romance",
+        "science fiction",
+        "sport",
+        "sand up & talk",
+        "thriller",
+        "travel"
+    ],
     "help": [
-        "\\w*help\\w*",
-        "\\w*how\\w*"
+        "\\w* help \\w*",
+        "\\w* how \\w*"
     ]
 }

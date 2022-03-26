@@ -10,10 +10,37 @@
         "Goodbye /username, I hope I've been helpful!",
         "See you next time! Come back wen you want to discover a new tv show or movie!"
     ],
-    "help":[
-        "This chatbot can help you find a new tv show or movie to watch, tell us a couple metrics and we will show it to you!"
+    "help": [
+        "<b>HELP MENU</b>\n\nThis chatbot can help you find a new tv show or movie to watch, tell us a couple metrics and we will show it to you! It works with Netflix, HBO max, Disney Plus, Apple TV Plus, Prime Video platforms!"
+    ],
+    "recommender": [
+        "ih2"
+    ],
+    "content_type": [
+        "ih"
+    ],
+    "another": [
+        "ih"
+    ],
+    "genre": [
+        "ih"
+    ],
+    "moreInfo": [
+        "I need more details!",
+        "It's not enough information"
+    ],
+    "error": [
+        "Something went wrong",
+        "My backend is having some issues",
+        "Something didn't work as it should"
     ],
     "none": [
-        "No ho he entes"
-    ]
+        "I didn't quite get that",
+        "Can you rephrase that?",
+        "I'm not sure what you mean by that",
+        "Not sure i get what you mean"
+    ],
+    "debug": "Debugging",
+    "debug1": "Debugging1",
+    "debug2": "Debugging2"
 }
