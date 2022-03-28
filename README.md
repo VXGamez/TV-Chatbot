@@ -47,21 +47,16 @@ Here is a practical example to see how the TV-Chatbot works:
 > **User:** Recommend me a TV show streamed in Netflix please!
 
 > **TV-Chatbot:** 
-
-<img src="/media/movies/movie2.jpg"> 
-
-☉ <b><u>Sacred Games</u></b>
-
-<i>2018 - 2 Seasons</i>
-
-❝A link in their pasts leads an honest cop to a fugitive gang boss, whose cryptic warning spurs the officer on a quest to save Mumbai from cataclysm.❞
-
-✳️ 18+  •  🕑 50min  •  ⭐ 8.6/10
+<br><br><img src="/media/movies/movie2.jpg" heigth=200px><br><br>
+☉ <b><u>Sacred Games</u></b><br><br>
+<i>2018 - 2 Seasons</i><br><br>
+❝A link in their pasts leads an honest cop to a fugitive gang boss, whose cryptic warning spurs the officer on a quest to save Mumbai from cataclysm.❞<br><br>
+✳️ 18+  •  🕑 50min  •  ⭐ 8.6/10<br><br>
 
 > **User:** Can you recommend me a movie now streamed in HBO max?
 
 > **TV-Chatbot:**
-<br><br><img src="/media/movies/movie1.jpg"><br><br>
+<br><br><img src="/media/movies/movie1.jpg" heigth=200px><br><br>
 ☉ <b><u>The Warning</u></b> <b>(2018)</b><br><br>
 ❝Ten-year-old Nico receives a threatening letter and now his life is in danger. No one seems to believe him except one person that he doesn't know.❞<br><br>
 ✳️ 18+  •  🕑 93min  •  ⭐ 5.9/10
