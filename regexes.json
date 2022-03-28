@@ -9,32 +9,6 @@
         "good day",
         "good night"
     ],
-    "goodbye": [
-        "goodbye",
-        "bye",
-        "see you"
-    ],
-    "thanks": [
-        "thanks",
-        "thank you",
-        "thankyou"
-    ],
-    "examples": [
-        "example"
-    ],
-    "recommender": [
-        "recommend",
-        "give",
-        "suggest",
-        "tell me"
-    ],
-    "another": [
-        "another",
-        "other",
-        "more", 
-        "again",
-        "different one"
-    ],
     "content_type": [
         "movie",
         "film",
