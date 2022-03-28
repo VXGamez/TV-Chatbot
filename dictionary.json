@@ -1,7 +1,7 @@
 {
     "welcome": [
         "Hello <b>/username</b>! 🙂",
-        "Hey!! What a joy to see you here! 😃",
+        "Hey <b>/username</b>!! What a joy to see you here! 😃",
         "Hello! If you want to to discover new series/films you are in the correct place! 🎥⭐",
         "Hi <b>/username</b>! How can I help you? 😋"
     ],
@@ -24,7 +24,7 @@
         "This is the content type"
     ],
     "another": [
-        "This is another movie"
+        "Tell me to recommend something first, and then if you tell me <i>another</i> one I will recommend you another one 🍿"
     ],
     "genre": [
         "Your input is a genre"

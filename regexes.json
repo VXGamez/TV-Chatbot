@@ -1,7 +1,7 @@
 {
     "welcome": [
-        "my name is \\w",
-        "i'm \\w",
+        "my name is \\w*",
+        "i'm \\w*",
         "hello",
         "hi",
         "good morning",

@@ -101,6 +101,7 @@ bot.on('message', (msg) => {
 
     if (match == "welcome") {
         var matches = input.match(regexes.welcome[0]);
+        console.log(matches[0]);
         if (matches != null) {
             user.name = matches[0].split(" ")[3];
         } else {
@@ -109,7 +110,8 @@ bot.on('message', (msg) => {
                 user.name = matches[0].split(" ")[1];
             }
         }
-    } else if (match == "recommender" || match == "content_type" || match == "genre" || match == "streaming_service") {
+    } 
+    else if (match == "recommender" || match == "content_type" || match == "genre" || match == "streaming_service") {
         if (input.split(" ").length > 1) {
             match = "not found";
             var index = 0;
@@ -201,7 +203,6 @@ bot.on('message', (msg) => {
             platforms = "";
 
             if (streaming.length > 1) {
-                console.log("entra?");
                 var allWords = input.split("or");
 
                 for (var i = 0; i < allWords.length; i++) {
@@ -239,6 +240,9 @@ bot.on('message', (msg) => {
         } else {
             item = diccionari['moreInfo'][Math.floor(Math.random() * diccionari['moreInfo'].length)];
         }
+    }
+    else if(match == "another"){
+        ok = true;
     }
 
 
