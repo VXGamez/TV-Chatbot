@@ -21,7 +21,6 @@
 <p align="center">
     TV-Chatbot is a Telegram Chatbot that can recommend you a variety of series and TV shows
 </p>
-<br>
 
 ## Introduction
 TV-Chatbot is a Telegram Chatbot that can recommend you a variety of series and TV shows from different platforms (specifically,
