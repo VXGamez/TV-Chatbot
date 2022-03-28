@@ -28,11 +28,17 @@ function capitalizeTheFirstLetterOfEachWord(words) {
     }
     return separateWord.join(' ');
  }
+ 
+ var userId;
+
+ process.on('unhandledRejection', error => {
+    bot.sendMessage(userId, diccionari['error'][Math.floor(Math.random()*diccionari['error'].length)], {parse_mode:'HTML'});
+});
 
 let sessions = new Map();
 
 bot.on('message', (msg) => {
-    var userId = msg.chat.id;
+    userId = msg.chat.id;
     var user = sessions.get(userId);
     if(user == null){
         user = new User(msg.chat.first_name.split(" ")[0]);
@@ -143,7 +149,6 @@ bot.on('message', (msg) => {
                     }
                 }
             });
-            console.log(nombres);
             if(nombres.length>0){
                 for(var g in nombres){
                     if(nombres[g].split(" ").length>1){
@@ -158,7 +163,6 @@ bot.on('message', (msg) => {
                     }
                 }
             }
-            console.log(genre);
             var selectedGenre = genre[0];
             
             if(genre.length>1){
