@@ -28,7 +28,7 @@ TV-Chatbot is a Telegram Chatbot that can recommend you a variety of series and 
 Netflix, HBO Max, Amazon Prime, Apple TV+ and Disney+).
 You can tell him what platforms you have and what you want to be recommended (e.g. a horror movie).
 
-To use it, run it and visit: [TvChatbot](https://t.me/SBC_TvChatBot)
+To use it visit: [TvChatbot](https://t.me/SBC_TvChatBot)
 
 ## API
 
