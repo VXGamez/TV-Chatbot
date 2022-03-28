@@ -101,14 +101,19 @@ bot.on('message', (msg) => {
 
     if (match == "welcome") {
         var matches = input.match(regexes.welcome[0]);
-        console.log(matches[0]);
         if (matches != null) {
             user.name = matches[0].split(" ")[3];
         } else {
             matches = input.match(regexes.welcome[1]);
             if (matches != null) {
                 user.name = matches[0].split(" ")[1];
+            } else{
+                matches = input.match(regexes.welcome[2]);
+                if (matches != null) {
+                    user.name = matches[0].split(" ")[2];
+                }
             }
+
         }
     } 
     else if (match == "recommender" || match == "content_type" || match == "genre" || match == "streaming_service") {

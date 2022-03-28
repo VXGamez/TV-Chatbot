@@ -53,9 +53,9 @@
         "❕❕ Remember to only use one genre"
     ],
     "none": [
-        "I didn't quite get that 🤔",
+        "I didn't quite get that 🤔\nWrite <i>help</i> for more info!",
         "Can you rephrase that? 🙄",
         "I'm not sure what you mean by that 🤨",
-        "Not sure i get what you mean 😶"
+        "Not sure i get what you mean 😶\nUse <i>help</i> for more info!"
     ]
 }
