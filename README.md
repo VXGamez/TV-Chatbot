@@ -5,12 +5,12 @@
 
 <p align="center">
   <a href="https://nodejs.org">
-    <img src="https://img.shields.io/badge/node.js-16.9-orange">
-  </a>
+    <img src="https://img.shields.io/badge/node.js-17.8-orange">
+  </a
   <a href="https://github.com/VXGamez/TV-Chatbot/tree/main/LICENSE">
     <img src="https://img.shields.io/badge/License-BSD%203-lightgrey.svg">
   </a>
-  <a href="https://github.com/bielcarpi/todoplusplus/tree/main">
+  <a href="https://github.com/VXGamez/TV-Chatbot/tree/main">
     <img src="https://img.shields.io/badge/Development Stage-blue.svg">
   </a>
   <a href="https://opensource.org/licenses/BSD-3-Clause">
@@ -21,13 +21,14 @@
 <p align="center">
     TV-Chatbot is a Telegram Chatbot that can recommend you a variety of series and TV shows
 </p>
+<br>
 
 ## Introduction
 TV-Chatbot is a Telegram Chatbot that can recommend you a variety of series and TV shows from different platforms (specifically,
 Netflix, HBO Max, Amazon Prime, Apple TV+ and Disney+).
 You can tell him what platforms you have and what you want to be recommended (e.g. a horror movie).
 
-To use it, run it and visit: t.me/SBC_TvChatBot
+To use it, run it and visit: [TvChatbot](https://t.me/SBC_TvChatBot)
 
 ## API
 
@@ -35,21 +36,49 @@ The API used for this project has been extracted from the [ReelGood](https://ree
 
 We found a limitation to this method. We could only support up to 5 streaming services simultaneously since supporting more would require a registered user and using a bearer token that refreshes over time.
 
-## Examples
+## Example
 
-Here are some practical examples to see how does the TV-Chatbot work:
+Here is a practical example to see how the TV-Chatbot works:
 
-    - Example 1:
+> **User:** Hello my name is Carlos!
 
-    User: > Hello my name is Carlos!
-    TV-Chatbot: > Hey!! What a joy to see you here! 😃
-    User: > Recommend me a TV show streamed in Netflix please!
-    TV-Chatbot: > 
+> **TV-Chatbot:** Hey!! What a joy to see you here! 😃
 
+> **User:** Recommend me a TV show streamed in Netflix please!
+
+> **TV-Chatbot:** 
+
+<img src="/media/movies/movie2.jpg"> 
+
+☉ <b><u>Sacred Games</u></b>
+
+<i>2018 - 2 Seasons</i>
+
+❝A link in their pasts leads an honest cop to a fugitive gang boss, whose cryptic warning spurs the officer on a quest to save Mumbai from cataclysm.❞
+
+✳️ 18+  •  🕑 50min  •  ⭐ 8.6/10
+
+> **User:** Can you recommend me a movie now streamed in HBO max?
+
+> **TV-Chatbot:**
+<br><br><img src="/media/movies/movie1.jpg"><br><br>
+☉ <b><u>The Warning</u></b> <b>(2018)</b><br><br>
+❝Ten-year-old Nico receives a threatening letter and now his life is in danger. No one seems to believe him except one person that he doesn't know.❞<br><br>
+✳️ 18+  •  🕑 93min  •  ⭐ 5.9/10
 
 ## How to Run it
+To run it, you need to have Node & npm installed in your system
 ```bash
+#Clone the repository
+git clone https://github.com/VXGamez/TV-Chatbot.git
 
+#Install the npm packages
+npm install
+
+#Start it
+npm start
+
+#Visit https://t.me/SBC_TvChatBot to talk to the bot
 ```
 
 
