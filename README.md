@@ -42,12 +42,12 @@ Here is a practical example to see how the TV-Chatbot works:
 
 > **User:** Hello my name is Carlos!
 
-> **TV-Chatbot:** Hey!! What a joy to see you here! 😃
+> **TV Chatbot:** Hey!! What a joy to see you here! 😃
 
 > **User:** Recommend me a TV show streamed in Netflix please!
 
-> **TV-Chatbot:** 
-<br><br><img src="/media/movies/movie2.jpg" height=200px><br><br>
+> **TV Chatbot:** 
+<br><br><img src="/media/movies/movie2.jpg" height=250px><br><br>
 ☉ <b><u>Sacred Games</u></b><br><br>
 <i>2018 - 2 Seasons</i><br><br>
 ❝A link in their pasts leads an honest cop to a fugitive gang boss, whose cryptic warning spurs the officer on a quest to save Mumbai from cataclysm.❞<br><br>
@@ -55,11 +55,15 @@ Here is a practical example to see how the TV-Chatbot works:
 
 > **User:** Can you recommend me a movie now streamed in HBO max?
 
-> **TV-Chatbot:**
-<br><br><img src="/media/movies/movie1.jpg" height=200px><br><br>
+> **TV Chatbot:**
+<br><br><img src="/media/movies/movie1.jpg" height=250px><br><br>
 ☉ <b><u>The Warning</u></b> <b>(2018)</b><br><br>
 ❝Ten-year-old Nico receives a threatening letter and now his life is in danger. No one seems to believe him except one person that he doesn't know.❞<br><br>
 ✳️ 18+  •  🕑 93min  •  ⭐ 5.9/10
+
+> **User:** Goodbye!
+
+> **TV Chatbot:** Bye! I hope to see you soon 🤙
 
 ## How to Run it
 To run it, you need to have Node & npm installed in your system

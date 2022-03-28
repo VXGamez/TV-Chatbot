@@ -29,6 +29,13 @@
     "genre": [
         "Your input is a genre"
     ],
+    "thanks": [
+        "No problem! 😊",
+        "My pleasure! 😉",
+        "That's what i'm for! 😛",
+        "Glad I could help 🤪",
+        "Whatever you need 😉"
+    ],
     "streaming_service": [
         "This is a streaming service"
     ],
