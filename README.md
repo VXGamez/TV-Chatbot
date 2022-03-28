@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/VXGamez/TV-Chatbot/tree/main/media/logo.png">
+  <img src="/media/popcorn.png" height="70px">
 </p>
 <h1 align="center">TV-Chatbot</h1>
 
