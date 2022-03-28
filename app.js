@@ -19,6 +19,16 @@ class User {
         this.contentType = null;
     }  
 };
+
+function capitalizeTheFirstLetterOfEachWord(words) {
+    var separateWord = words.toLowerCase().split(' ');
+    for (var i = 0; i < separateWord.length; i++) {
+       separateWord[i] = separateWord[i].charAt(0).toUpperCase() +
+       separateWord[i].substring(1);
+    }
+    return separateWord.join(' ');
+ }
+
 let sessions = new Map();
 
 bot.on('message', (msg) => {
@@ -54,7 +64,7 @@ bot.on('message', (msg) => {
         input = input.replace("hbo max", "hbo_max");
     }
 
-    
+
     var match = "none";
     
     var found = false;
@@ -71,7 +81,7 @@ bot.on('message', (msg) => {
             return;
         }
     });
-    var ok = true;
+    var ok = false;
     var item = diccionari[match][Math.floor(Math.random()*diccionari[match].length)];
 
     
@@ -89,11 +99,7 @@ bot.on('message', (msg) => {
                 user.name = matches[0].split(" ")[1];
             }
         }
-        ok=false;
-    }else if(match == "goodbye"){
-        ok=false;
-    }
-    else if(match == "recommender" || match == "content_type" || match == "genre" || match == "streaming_service"){
+    }else if(match == "recommender" || match == "content_type" || match == "genre" || match == "streaming_service"){
         if(input.split(" ").length > 1){
             match = "not found";
             var index = 0;
@@ -215,16 +221,19 @@ bot.on('message', (msg) => {
             }
 
             user.contentType = content_type;
-            user.lastQuery = "https://api.reelgood.com/v3.0/content/random?content_kind="+user.contentType+"&nocache=true&region=es" + (genre=="" ? "" : "&genre="+selectedGenre) + "&sources=" + (platforms=="" ?  sources : platforms);
+            user.selectedGenre = genre=="" ? "" : "&genre="+selectedGenre;
+            user.selectedPlatforms = platforms=="" ?  sources : platforms;
+            user.lastQuery = "https://api.reelgood.com/v3.0/content/random?content_kind="+user.contentType+"&nocache=true&region=es" + user.selectedGenre + "&sources=" + user.selectedPlatforms;
+            ok=true;
+
         }else{
             item = diccionari['moreInfo'][Math.floor(Math.random()*diccionari['moreInfo'].length)];
-            ok = false;
         }
     }
 
 
     if(item.match("/username") != null){
-        item = item.replace("/username", user.name);
+        item = item.replace("/username", capitalizeTheFirstLetterOfEachWord(user.name));
     }
 
 
@@ -277,8 +286,6 @@ bot.on('message', (msg) => {
 });
 
 
-
-
 /*
 EXEMPLE DE CONVERSA:
 
@@ -309,8 +316,4 @@ C: Qualsevol peli de terror o comedia
 U: Recomana'm una peli que no sigui de terror
 C: Qualsevol peli que no sigui terror
 
--------------- TAMO AQUI --------------
-
-U: Y una de comedia?
-C: Una peli de comedia
 */

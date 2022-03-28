@@ -1,50 +1,54 @@
 {
     "welcome": [
-        "Hello /username!",
-        "Hey!! What a joy to see you here!",
-        "Hello! If you want to to discover new series/films you are in the correct place!",
-        "Hi /username! How can I help you?"
+        "Hello <b>/username</b>! 🙂",
+        "Hey!! What a joy to see you here! 😃",
+        "Hello! If you want to to discover new series/films you are in the correct place! 🎥⭐",
+        "Hi <b>/username</b>! How can I help you? 😋"
     ],
     "goodbye": [
-        "Bye! I hope to see you soon",
-        "Goodbye /username, I hope I've been helpful!",
-        "See you next time! Come back wen you want to discover a new tv show or movie!"
+        "Bye! I hope to see you soon 🤙",
+        "Goodbye /username, I hope I've been helpful! 😁",
+        "See you next time! Come back wen you want to discover a new tv show or movie! 🍿 "
+    ],
+    "examples": [
+        "Here are some examples of what can you tell me:\n\n➜ Example ✍️: Recommend me a Netflix Action TV Show\n➜ Example ✍️: Show me an Amazon Prime Horror Movie\n➜ Example ✍️: Tell me an Action TV Show or a Movie\n➜ Example ✍️: Recommend me a movie that's not horror",
+        "Here are some examples of what can you tell me:\n\n➜ Example ✍️: Recommend me a Netflix Action TV Show\n➜ Example ✍️: Tell me an action movie\n➜ Example ✍️: And another one?\n➜ Example ✍️: Recommend me a movie or a show"
     ],
     "help": [
-        "<b>HELP MENU</b>\n\nThis chatbot can help you find a new tv show or movie to watch, tell us a couple metrics and we will show it to you! It works with Netflix, HBO max, Disney Plus, Apple TV Plus, Prime Video platforms!"
+        "<b>ℹ️ HELP MENU️</b>\n\nI can help you find a good TV Show or movie to watch😉 Tell me a couple metrics and I will show it to you! I can recommend Movies and TV Show from Netflix, HBO max, Disney Plus, Apple TV Plus and Prime Video!\n\nExample ✍️: Recommend me a Netflix Action TV Show\n<i>For more examples use the \"example\" command</i>"
     ],
     "recommender": [
-        "ih2"
+        "We recommend you this movie"
     ],
     "content_type": [
-        "ih"
+        "This is the content type"
     ],
     "another": [
-        "ih"
+        "This is another movie"
     ],
     "genre": [
-        "ih"
+        "Your input is a genre"
     ],
     "streaming_service": [
-        "ih"
+        "This is a streaming service"
     ],
     "moreInfo": [
-        "I need more details!",
-        "It's not enough information"
+        "❕❕ I need more details!",
+        "❕❕ It's not enough information"
     ],
     "error": [
-        "Something went wrong",
-        "My backend is having some issues",
-        "Something didn't work as it should"
+        "‼️ <b>ERROR ⚠️</b>\n\nSomething went wrong",
+        "‼️ <b>ERROR ⚠️</b>\n\nMy backend is having some issues",
+        "‼️ <b>ERROR ⚠️</b>\n\nSomething didn't work as it should"
     ],
     "invalidGenre": [
-        "You can only use one genre",
-        "Remember to only use one genre"
+        "❕❕ You can only use one genre",
+        "❕❕ Remember to only use one genre"
     ],
     "none": [
-        "I didn't quite get that",
-        "Can you rephrase that?",
-        "I'm not sure what you mean by that",
-        "Not sure i get what you mean"
+        "I didn't quite get that 🤔",
+        "Can you rephrase that? 🙄",
+        "I'm not sure what you mean by that 🤨",
+        "Not sure i get what you mean 😶"
     ]
 }
