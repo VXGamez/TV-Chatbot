@@ -1,13 +1,39 @@
 {
     "welcome": [
-        "my name is \\w*",
-        "i'm \\w*",
+        "my name is \\w",
+        "i'm \\w",
         "hello",
         "hi",
         "good morning",
         "good afternoon",
         "good day",
         "good night"
+    ],
+    "goodbye": [
+        "goodbye",
+        "bye",
+        "see you"
+    ],
+    "thanks": [
+        "thanks",
+        "thank you",
+        "thankyou"
+    ],
+    "examples": [
+        "example"
+    ],
+    "recommender": [
+        "recommend",
+        "give",
+        "suggest",
+        "tell me"
+    ],
+    "another": [
+        "another",
+        "other",
+        "more", 
+        "again",
+        "different one"
     ],
     "content_type": [
         "movie",
@@ -56,6 +82,6 @@
     "help": [
         "(?:^|\\W)help(?:$|\\W)",
         "(?:^|\\W)how(?:$|\\W)",
-        "\\w*what can you \\w*"
+        "\\wwhat can you \\w"
     ]
 }
