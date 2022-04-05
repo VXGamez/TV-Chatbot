@@ -117,7 +117,7 @@ bot.on('message', (msg) => {
         }
     } 
     else if (match == "recommender" || match == "content_type" || match == "genre" || match == "streaming_service") {
-        if (input.split(" ").length > 1) {
+        if (input.split(" ").length > 1 && input != "tv show" && input != "tv series"){
             match = "not found";
             var index = 0;
             var indexFound = -1;
@@ -311,6 +311,8 @@ bot.on('message', (msg) => {
         bot.sendMessage(userId, item, {
             parse_mode: 'HTML'
         });
+
+        if(match == "goodbye") sessions.delete(userId); //Delete the session of the user
     }
 });
 

@@ -8,6 +8,7 @@
         "hi",
         "good morning",
         "good afternoon",
+        "good evening",
         "good day",
         "good night"
     ],
@@ -35,7 +36,8 @@
         "other",
         "more", 
         "again",
-        "different one"
+        "different one",
+        "next"
     ],
     "content_type": [
         "movie",
@@ -83,6 +85,19 @@
     ],
     "help": [
         "(?:^|\\W*)help(?:$|\\W*)",
-        "\\w*what can you \\w*"
+        "(?:^|\\W*)question(?:$|\\W*)",
+        "\\w*what can you \\w*",
+        "\\w*what do you do\\w*"
+    ],
+    "made_you": [
+        "(?:$|\\W*)made you(?:$|\\W*)",
+        "(?:$|\\W*)created you(?:$|\\W*)",
+        "(?:$|\\W*)create you(?:$|\\W*)"
+    ],
+    "who_am_i": [
+        "(?:$|\\W*)who are you(?:$|\\W*)",
+        "(?:$|\\W*)about you(?:$|\\W*)",
+        "(?:$|\\W*)your name(?:$|\\W*)",
+        "(?:$|\\W*)are you(?:$|\\W*)"
     ]
 }

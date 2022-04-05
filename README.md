@@ -64,9 +64,9 @@ Here is a practical example to see how the TV-Chatbot works:
 
 ## How to Run it
 
-The bot is currently hosted on Google Cloud and you can talk to it by visiting [TvChatbot](https://t.me/SBC_TvChatBot).
+The bot is currently hosted on Heroku and you can talk to it by visiting [TvChatbot](https://t.me/SBC_TvChatBot).
 
-If it's not working, to run it yourself you need to have Node & npm installed in your system and:
+If it's not working, you can run it yourself (don't do it unless it's not working). You need to have Node & npm installed in your system and:
 
 ```bash
 #Clone the repository
