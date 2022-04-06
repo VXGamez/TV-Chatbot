@@ -17,9 +17,6 @@
     "url": "https://github.com/VXGamez/TV-Chatbot/issues"
   },
   "homepage": "https://github.com/VXGamez/TV-Chatbot#readme",
-  "engines": {
-    "node": "17.x"
-  },
   "dependencies": {
     "fetch": "^1.1.0",
     "node-telegram-bot-api": "^0.56.0"
